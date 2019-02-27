@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>首页</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+  <div class="main index">
+    <div class="section section-one">
+      <img src="./images/shouye01.png" class="section-one-bg">
+      <div class="section-one-nav">
+        <div class="section-one-con">
+          <p class="text-num">5</p>
+          <p class="text-con">5种天赋类别</p>
+        </div>
+        <div class="section-one-con">
+          <p class="text-num">8</p>
+          <p class="text-con">8种能量状态</p>
+        </div>
+        <div class="section-one-con">
+          <p class="text-num">20</p>
+          <p class="text-con">20种细分天赋<br>类别</p>
+        </div>
+        <div class="section-one-con">
+          <p class="text-num">800</p>
+          <p class="text-con">800种基础<br>状态</p>
+        </div>
+      </div>
+    </div>
+    <div class="section section-two">
+      <p class="two-title">准备好检测了吗？</p>
+      <p class="two-tip">进入实验情景，精准找到孩子与生俱来的天赋能力</p>
+      <a href="#" class="two-btn">智能开启</a>
+    </div>
+    <div class="section section-three">
+      <p class="section-three-title">检测三个核心价值</p>
+      <div class="three-nav">
+        <div class="three-con">
+          <img src="./images/shouye03.png" class="three-img">
+          <p class="three-title">学习能力</p>
+          <p class="three-tip">提升成绩获得有效<br>学习规律</p>
+        </div>
+        <div class="three-con">
+          <img src="./images/shouye04.png" class="three-img">
+          <p class="three-title">天赋特长</p>
+          <p class="three-tip">用于天赋开启训练<br>日常感知练习</p>
+        </div>    
+        <div class="three-con">
+          <img src="./images/shouye05.png" class="three-img">
+          <p class="three-title">学业规划</p>
+          <p class="three-tip">提高学生的人生职业<br>发展效率</p>
+        </div>
+      </div>
+    </div>
+    <div class="section section-four">
+      <p class="four-title">真度精选</p>
+      <p class="four-tip">真实而有温度的产品</p>
+      <div class="section-four-con">
+        <div class="four-con">
+          <a href="#" class="four-item">
+            <img src="./images/shouye06.png" class="four-goods-img">
+            <p class="goods-title">真度·全脑训练教具卡</p>
+            <p class="goods-price">179.00</p>
+            <s class="goods-cost-price">原价：¥266.00</s>
+          </a>
+          <a href="#" class="four-item">
+            <img src="./images/shouye06.png" class="four-goods-img">
+            <p class="goods-title">真度·全脑训练教具卡</p>
+            <p class="goods-price">179.00</p>
+            <s class="goods-cost-price">原价：¥266.00</s>
+          </a>
+          <a href="#" class="four-item">
+            <img src="./images/shouye06.png" class="four-goods-img">
+            <p class="goods-title">真度·全脑训练教具卡</p>
+            <p class="goods-price">179.00</p>
+            <s class="goods-cost-price">原价：¥266.00</s>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="section section-five">
+      <img src="./images/shouye07.png" class="five-img1">
+      <img src="./images/shouye08.png" class="five-img2">
+    </div>
+  </div>
+  <div id="foot" class="foot">
+    <a href="./1.0.0首页.html" class="foot-nav">
+      <img src="./images/icon05.png" class="foot-nav-img" alt="">
+      <p class="foot-nav-title">首页</p>
+    </a>
+    <a href="./2.0.0商城.html" class="foot-nav">
+      <img src="./images/icon02.png" class="foot-nav-img" alt="">
+      <p class="foot-nav-title">商城</p>
+    </a>
+    <a href="#" class="foot-nav">
+      <img src="./images/icon03.png" class="foot-nav-img" alt="">
+      <p class="foot-nav-title">健康大使</p>
+    </a>
+    <a href="#" class="foot-nav">
+      <img src="./images/icon04.png" class="foot-nav-img" alt="">
+      <p class="foot-nav-title">我的</p>
+    </a>
+  </div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script type="text/javascript">
+</script>
+</html>

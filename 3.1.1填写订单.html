@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>填写订单</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./js/MultiPicker/MultiPicker.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+  <div class="main rent confirm-goods">
+    <!-- <div class="change-time add-addr">
+      <span class="left">您还没有收货地址，点击创建</span>
+      <img src="./images/shangpinxq03.png" class="arrow-img" alt="">
+    </div> -->
+    <div class="rent-addr">
+      <p class="addr-info">
+        <span>王吾力</span>
+        <span>13711486887</span>
+      </p>
+      <p class="addr-details">广东省广州市天河区壬丰大厦东厅1304室</p>
+      <img src="./images/shangpinxq03.png" alt="">
+    </div>
+    <div class="goods-list">
+      <div class="rent-goods">
+        <img src="./images/fenleilb01.png" class="rent-goods-img" alt="">
+        <div class="rent-goods-info">
+          <p class="title">温暖衡通桥</p>
+          <span class="num">x1</span>
+          <p class="guige-text">675*400*338mm</p>
+          <div class="rent-price purchase">
+            <span>￥3620</span>
+          </div>
+        </div>
+      </div>
+      <div class="rent-goods">
+        <img src="./images/fenleilb01.png" class="rent-goods-img" alt="">
+        <div class="rent-goods-info">
+          <p class="title">温暖衡通桥</p>
+          <span class="num">x1</span>
+          <p class="guige-text">675*400*338mm</p>
+          <div class="rent-price purchase">
+            <span>￥3620</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-bottom">
+      <div class="block">
+        <span class="fl color_666">运费</span>
+        <span class="fr">¥0.00</span>
+      </div>
+      <div class="block">
+        <span class="fl color_666">商品合计</span>
+        <span class="fr">¥3280.00</span>
+      </div>
+    </div>
+    <div class="border-bottom">
+      <div class="block">
+        <span class="fl">选择支付方式</span>
+      </div>
+      <div class="block mrlr_15">
+        <span class="fl"><img src="./images/dingdanxx01.png" class="wx-icon" alt=""> 微信支付</span>
+        <span class="fr bg-isclick"></span>
+      </div>
+    </div>
+    <div class="pay-submit">
+      <p class="submit-price">总计：￥1026</p>
+      <a class="pay-submit-btn" href="./1.0.3租用成功.html">确认付款</a>
+    </div>
+    <div id="targetContainer"></div>
+    <div class="mask-dialog add-dialog">
+      <div class="mask-dialog-bg"></div>
+      <div class="mask-content add-addr-content">
+        <img src="./images/shangpinxq07.png" class="icon-x" alt="">
+        <div class="div-input">
+          <p class="addr-title">收货人</p>
+          <input type="text" placeholder="请输入收货人姓名">
+        </div>
+        <div class="div-input">
+          <p class="addr-title">联系方式</p>
+          <input type="text" placeholder="请输入联系电话">
+        </div>
+        <div class="div-input">
+          <p class="addr-title">所在地区</p>
+          <input type="text" id="multiPickerInput" placeholder="省份、城市、区县" readonly>
+          <img src="./images/shangpinxq03.png" alt="">
+        </div>
+        <div class="div-input">
+          <p class="addr-title">详细地址</p>
+          <input type="text" placeholder="请填写详细地址，如街道、楼牌号等">
+        </div>
+        <p class="save-address">保存</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script src="./js/MultiPicker/MultiPicker.js"></script>
+<script src="./js/MultiPicker/city.js"></script>
+<script>
+  $('.mrlr_15 .bg-isclick').click(function() {
+    $('.mrlr_15 .bg-isclick').removeClass('active');
+    $(this).addClass('active');
+  })
+  new MultiPicker({
+    input: 'multiPickerInput',//点击触发插件的input框的id
+    container: 'targetContainer',//插件插入的容器id
+    jsonData: $city,
+    success: function (arr) {
+      if(arr.length == 1){
+        $('#multiPickerInput').val(arr[0].value);
+      }else if(arr.length == 2){
+        $('#multiPickerInput').val(arr[0].value +" "+ arr[1].value);
+      }else{
+        $('#multiPickerInput').val(arr[0].value +" "+ arr[1].value +" "+ arr[2].value);
+      }      
+    }//回调
+  });
+  $('.add-addr').click(function() {
+    $('.add-dialog').show();
+  })
+  $('.mask-dialog-bg, .icon-x').click(function() {
+    $('.mask-dialog').hide();
+  })
+</script>
+</html>

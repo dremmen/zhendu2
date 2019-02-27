@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>提示</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+  <style type="text/css">
+  	.a-index{
+  		padding: 0 1.5rem;
+  	}
+  	.a-index a{
+  		display: block;
+  		height: 4rem;
+  		line-height: 4rem;
+  		border-bottom: .05rem solid #e6e6e6;
+  		font-size: 1.4rem;
+  		color: #666;
+  	}
+  </style>
+</head>
+<body>
+  <div class="main a-index">
+  	<a href="./1.0.0首页.html">1.0.0首页</a>
+  	<a href="./1.0.1选择身份.html">1.0.1选择身份</a>
+  	<a href="./2.0.0课程.html">2.0.0课程</a>
+  	<a href="./2.0.1课程分类.html">2.0.1课程分类</a>
+  	<a href="./2.0.4课程订单详情.html">2.0.4课程订单详情</a>
+  	<a href="./2.1.1购买的课程（空）.html">2.1.1购买的课程（空）</a>
+  	<a href="./2.1.1购买的课程.html">2.1.1购买的课程</a>
+  	<a href="./2.1.2我的收藏（空）.html">2.1.2我的收藏（空）</a>
+  	<a href="./2.1.2我的收藏.html">2.1.2我的收藏</a>
+  	<a href="./3.0.0商城.html">3.0.0商城</a>
+  	<a href="./3.0.2其他分类列表.html">3.0.2其他分类列表</a>
+  	<a href="./3.1.0商品详情.html">3.1.0商品详情</a>
+  	<a href="./3.1.1填写订单.html">3.1.1填写订单</a>
+  	<a href="./3.1.1支付成功.html">3.1.1支付成功</a>
+  </div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script>
+</script>
+</html>

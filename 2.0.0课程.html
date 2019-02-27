@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>真度学院课堂</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./js/swiper/css/swiper.min.css">
+  <link rel="stylesheet" href="./js/mescroll-master/mescroll.min.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+	<div id="mescroll" class="main mescroll course">
+		<div class="course-swiper">
+	        <div class="swiper-wrapper">
+				<a href="#" class="swiper-slide">
+					<img src="./images/kecheng01.png">
+				</a>
+				<a href="#" class="swiper-slide">
+					<img src="./images/kecheng01.png">
+				</a>
+				<a href="#" class="swiper-slide">
+					<img src="./images/kecheng01.png">
+				</a>
+			</div>
+        	<div class="swiper-pagination"></div>
+		</div>
+		<div class="course-nav">
+			<a href="#" class="course-con">
+				<img src="./images/kecheng02.png" class="course-nav-img">
+				<p class="course-nav-text">课程分类</p>
+			</a>
+			<a href="#" class="course-con">
+				<img src="./images/kecheng03.png" class="course-nav-img">
+				<p class="course-nav-text">购买的课程</p>
+			</a>
+			<a href="#" class="course-con">
+				<img src="./images/kecheng04.png" class="course-nav-img">
+				<p class="course-nav-text">我的收藏</p>
+			</a>
+		</div>
+		<div class="course-section course-one">
+			<p class="course-section-title">首推精选</p>
+			<a href="#" class="course-one-con">
+				<img src="./images/kecheng05.png" class="course-one-img">
+				<div class="course-one-item">
+					<p class="course-one-text">一周好英语！其实有秘密方法...</p>
+					<i class="course-tag">视频</i>
+					<p class="clearfix">
+						<span class="fl">¥99.00</span>
+						<span class="fr">3055人已购买</span>
+					</p>
+				</div>
+			</a>
+		</div>
+		<div class="course-section course-two">
+			<p class="course-section-title">精选好课</p>
+			<div class="course-two-con clearfix">
+				<a href="#" class="course-two-item">
+					<img src="./images/kecheng05.png" class="course-two-img">
+					<div class="course-two-bg">
+						<p class="course-two-text">极速运算-特训营系列课程</p>
+						<i class="course-tag">视频</i>
+						<p class="clearfix">
+							<span class="fl">¥99.00</span>
+							<span class="fr">3055人已购买</span>
+						</p>
+					</div>
+				</a>
+				<a href="#" class="course-two-item">
+					<img src="./images/kecheng05.png" class="course-two-img">
+					<div class="course-two-bg">
+						<p class="course-two-text">极速运算-特训营系列课程</p>
+						<i class="course-tag">视频</i>
+						<p class="clearfix">
+							<span class="fl">¥99.00</span>
+							<span class="fr">3055人已购买</span>
+						</p>
+					</div>
+				</a>
+				<a href="#" class="course-two-item">
+					<img src="./images/kecheng05.png" class="course-two-img">
+					<div class="course-two-bg">
+						<p class="course-two-text">极速运算-特训营系列课程</p>
+						<i class="course-tag">视频</i>
+						<p class="clearfix">
+							<span class="fl">¥99.00</span>
+							<span class="fr">3055人已购买</span>
+						</p>
+					</div>
+				</a>
+				<a href="#" class="course-two-item">
+					<img src="./images/kecheng05.png" class="course-two-img">
+					<div class="course-two-bg">
+						<p class="course-two-text">极速运算-特训营系列课程</p>
+						<i class="course-tag">视频</i>
+						<p class="clearfix">
+							<span class="fl">¥99.00</span>
+							<span class="fr">3055人已购买</span>
+						</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="course-section course-three">
+			<p class="course-section-title">更多推荐</p>
+			<div id="course-three-con">
+				
+			</div>
+		</div>
+	</div>
+	<div id="foot" class="foot">
+		<a href="./1.0.0首页.html" class="foot-nav">
+			<img src="./images/icon01.png" class="foot-nav-img" alt="">
+			<p class="foot-nav-title">首页</p>
+		</a>
+		<a href="./2.0.0商城.html" class="foot-nav">
+			<img src="./images/icon06.png" class="foot-nav-img" alt="">
+			<p class="foot-nav-title">商城</p>
+		</a>
+		<a href="#" class="foot-nav">
+			<img src="./images/icon03.png" class="foot-nav-img" alt="">
+			<p class="foot-nav-title">健康大使</p>
+		</a>
+		<a href="#" class="foot-nav">
+			<img src="./images/icon04.png" class="foot-nav-img" alt="">
+			<p class="foot-nav-title">我的</p>
+		</a>
+	</div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script src="./js/swiper/js/swiper.min.js"></script>
+<script src="./js/mescroll-master/mescroll.min.js"></script>
+<script src="./js/mescroll-master/demo/res/pdlist1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var swiper = new Swiper('.course-swiper', {
+		autoplay: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	});
+	$(function(){
+		var mescroll = new MeScroll("mescroll", {
+		  up: {
+		    page:{size:1},//每次加载1条数据,模拟loadFull
+		    loadFull: {
+		      use: true, //列表数据过少,是否自动加载下一页,直到满屏或者无更多数据为止;默认false
+		      delay: 500 //延时执行的毫秒数; 延时是为了保证列表数据或占位的图片都已初始化完成,且下拉刷新上拉加载中区域动画已执行完毕;
+		    },
+		    callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+		    isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+		    clearEmptyId: "dataList", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+		    lazyLoad: {
+		      use: true
+		    }
+		  }
+		});
+
+		function getListData(page){
+		  getListDataFromNet(page.num, page.size, function(curPageData){
+		    console.log("page.num="+page.num+", page.size="+page.size+", curPageData.length="+curPageData.length);
+		    mescroll.endSuccess(curPageData.length);
+		    setListData(curPageData);
+		  }, function(){
+		    mescroll.endErr();
+		  });
+		}
+
+		/*设置列表数据*/
+		function setListData(curPageData){
+		  var listDom=document.getElementById("course-three-con");
+		  for (var i = 0; i < 10; i++) {
+		    var pd=curPageData[i];
+		    
+		    var str = '<a class="clearfix course-three-item" href="#">'+
+						'<div class="fl course-item-div">'+
+							'<p class="course-three-text">真度·专业分析应试教育把脉天赋 成就未来</p>'+
+							'<p class="clearfix">'+
+								'<i class="course-tag fl">视频</i>'+
+								'<span class="fr">¥1980.00</span>'+
+							'</p>'+
+						'</div>'+
+						'<img src="./images/kecheng05.png" class="fl course-three-img">'+
+					'</a>';
+		    var liDom=document.createElement("div");
+		    liDom.innerHTML=str;
+		    listDom.appendChild(liDom);
+		  }
+		}
+
+		function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+		  //延时一秒,模拟联网
+		  setTimeout(function () {
+		    var data=pdlist1;
+		    //模拟分页数据
+		    var listData=[];
+		    for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+		      if(i==data.length) break;
+		      listData.push(data[i]);
+		    }
+		    successCallback(listData);
+		  },500)
+		}    
+	});
+</script>
+</html>

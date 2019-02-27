@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>课程分类</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./js/mescroll-master/mescroll.min.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+  <div class="main mescroll shoppingMall course-classify" id="mescroll">
+  	<div class="shopping-mall-top">
+	  	<div class="shopping-mall-con">
+	  		<a href="#" class="shopping-nav-item">
+	  			<p class="shopping-nav-text active">热门精选</p>
+	  		</a>
+	  		<a href="#" class="shopping-nav-item">
+	  			<p class="shopping-nav-text">个人提升</p>
+	  		</a>
+	  		<a href="#" class="shopping-nav-item">
+	  			<p class="shopping-nav-text">名家课堂</p>
+	  		</a>
+	  		<a href="#" class="shopping-nav-item">
+	  			<p class="shopping-nav-text">亲子家庭</p>
+	  		</a>
+	  		<a href="#" class="shopping-nav-item">
+	  			<p class="shopping-nav-text">记忆力</p>
+	  		</a>
+	  		<a href="#" class="shopping-nav-item">
+	  			<p class="shopping-nav-text">观察力</p>
+	  		</a>
+	  	</div>
+	  	<span class="classify-block"><img src="./images/fenleilb06.png"></span>
+  	</div>
+  	<div class="mask-dialog">
+  		<div class="mask-dialog-bg"></div>
+  		<div class="mask-dialog-con">
+		  	<div class="change-classify">
+		  		<div class="change-classify-div">
+		  			<span class="classify-title">请选择分类</span>
+		  			<span class="classify-block"><img src="./images/shangchengtc01.png"></span>
+		  		</div>
+		  		<div class="classify-item">
+		  			<a href="#" class="classify-item-con active">全部</a>
+		  			<a href="#" class="classify-item-con">视频</a>
+		  			<a href="#" class="classify-item-con">想象力</a>
+		  			<a href="#" class="classify-item-con">创造力</a>
+		  			<a href="#" class="classify-item-con">专注力</a>
+		  			<a href="#" class="classify-item-con">记忆力</a>
+		  			<a href="#" class="classify-item-con">观察力</a>
+		  		</div>
+		  	</div>  			
+  		</div>
+  	</div>
+  	<div class="classify-con">
+		<div class="classify-item">
+			<a href="#" class="classify-item-con active">全部</a>
+			<a href="#" class="classify-item-con">视频</a>
+			<a href="#" class="classify-item-con">音频</a>
+		</div>
+	</div>
+    <div class="section course-two course-section-two">
+    	<div class="course-two-con clearfix" id="course-list">
+		</div>
+    </div>
+  	<a href="#" class="cart-btn"><img src="./images/fenleilb03.png"><span>0</span></a>
+  </div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script src="./js/mescroll-master/mescroll.min.js"></script>
+<script src="./js/mescroll-master/demo/res/pdlist1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		var mescroll = new MeScroll("mescroll", {
+		  up: {
+		    page:{size:1},//每次加载1条数据,模拟loadFull
+		    loadFull: {
+		      use: true, //列表数据过少,是否自动加载下一页,直到满屏或者无更多数据为止;默认false
+		      delay: 500 //延时执行的毫秒数; 延时是为了保证列表数据或占位的图片都已初始化完成,且下拉刷新上拉加载中区域动画已执行完毕;
+		    },
+		    callback: getListData, //上拉回调,此处可简写; 相当于 callback: function (page) { getListData(page); }
+		    isBounce: false, //此处禁止ios回弹,解析(务必认真阅读,特别是最后一点): http://www.mescroll.com/qa.html#q10
+		    clearEmptyId: "dataList", //1.下拉刷新时会自动先清空此列表,再加入数据; 2.无任何数据时会在此列表自动提示空
+		    lazyLoad: {
+		      use: true
+		    }
+		  }
+		});
+
+		function getListData(page){
+		  getListDataFromNet(page.num, page.size, function(curPageData){
+		    mescroll.endSuccess(curPageData.length);
+		    setListData(curPageData);
+		  }, function(){
+		    mescroll.endErr();
+		  });
+		}
+
+		/*设置列表数据*/
+		function setListData(curPageData){
+		  var listDom=document.getElementById("course-list");
+		  for (var i = 0; i < 10; i++) {
+		    var pd=curPageData[i];
+		    var str = '<div>'+
+						'<img src="./images/kecheng05.png" class="course-two-img">'+
+						'<div class="course-two-bg">'+
+							'<p class="course-two-text">极速运算-特训营系列课程</p>'+
+							'<i class="course-tag">视频</i>'+
+							'<p class="clearfix">'+
+								'<span class="fl">¥99.00</span>'+
+								'<span class="fr">3055人已购买</span>'+
+							'</p>'+
+						'</div>'+
+					'</div>';
+		    var liDom=document.createElement("a");
+		    liDom.className = 'course-two-item';
+		    liDom.innerHTML=str;
+		    listDom.appendChild(liDom);
+		  }
+		}
+
+		function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+		  //延时一秒,模拟联网
+		  setTimeout(function () {
+		    var data=pdlist1;
+		    //模拟分页数据
+		    var listData=[];
+		    for (var i = (pageNum-1)*pageSize; i < pageNum*pageSize; i++) {
+		      if(i==data.length) break;
+		      listData.push(data[i]);
+		    }
+		    successCallback(listData);
+		  },500)
+		}    
+	});
+
+	$('.shopping-mall-top .classify-block').click(function() {
+		$('.mask-dialog').show();
+	})
+	$('.mask-dialog .mask-dialog-bg, .mask-dialog .classify-block').click(function() {
+		$('.mask-dialog').hide();
+	})
+</script>
+</html>

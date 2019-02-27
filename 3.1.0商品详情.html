@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>商品详情</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./js/swiper/css/swiper.min.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+	<div class="main goods-details">
+		<div class="goods-details-swiper">
+	        <div class="swiper-wrapper">
+				<a href="#" class="swiper-slide">
+					<img src="./images/shangpinxq01.png">
+				</a>
+				<a href="#" class="swiper-slide">
+					<img src="./images/shangpinxq01.png">
+				</a>
+				<a href="#" class="swiper-slide">
+					<img src="./images/shangpinxq01.png">
+				</a>
+			</div>
+        	<div class="swiper-pagination"></div>
+		</div>
+		<div class="info-p">
+			<p class="price"><span>￥</span>12.5 <s>¥268.00</s> <img src="./images/shangpinxq02.png"></p>
+			<div class="title-div clearfix">
+				<p class="title fl">真度专为睡眠而生的耳机 好品质低失真 还原自然的声音</p>
+				<p class="share fr">
+					<img src="./images/kechengxq05.png" class="share-img">
+					<span class="text">分享</span>
+				</p>
+			</div>			
+			<p class="goods-tip">舒服隔音降噪入耳式</p>
+		</div>
+		<div class="choice-guige">
+			<span>请选择规格和数量</span>
+			<img src="./images/shangpinxq03.png" class="arrow-img">
+		</div>
+		<div class="details">
+			<p>商品详情</p>
+				<img src="./images/shangpinxq04.png">
+			</div>
+		<div class="btn">
+			<div class="cart first">
+				<img src="./images/shangpinxq05.png" alt="">
+				<span class="cart-text">客服</span>
+			</div>
+			<div class="cart second">
+				<img src="./images/shangpinxq06.png" alt="">
+				<span class="cart-text">购物车</span>
+				<i>1</i>
+			</div>
+			<span class="btn-flex left">加入购物车</span>
+			<span class="btn-flex right">立即购买</span>
+		</div>
+	</div>
+	<div class="mask-dialog mask-contact">
+		<div class="mask-dialog-bg"></div>
+		<div class="mask-contact-kefu">
+			<p class="concact-title">联系客服</p>
+			<img src="./images/shangpinxq12.png" class="concact-code" alt="">
+			<p class="concact-tip">长按识别二维码联系客服</p>
+			<span class="concact-cancel">关闭</span>
+		</div>
+	</div>
+	<div class="mask-dialog mask-spec">
+		<div class="mask-dialog-bg"></div>
+		<div class="mask-spec-content">
+			<img src="./images/shangpinxq07.png" class="close-img">
+			<div class="spec-content-goods clearfix">
+				<img src="./images/fenleilb01.png" class="fl spec-goods-img">
+				<div class="fl spec-goods-div">
+					<p class="spec-goods-price">¥188.00</p>
+					<p class="spec-goods-tip">请选择商品规格</p>
+				</div>
+			</div>
+			<div class="spec-content">
+				<p class="spec-content-title">商品规格</p>
+				<div class="spec-content-div clearfix">
+					<span class="active">黑色款</span>
+					<span>白色款</span>
+				</div>
+			</div>
+			<div class="spec-content">
+				<p class="spec-content-title">数量选择</p>
+				<div class="spec-num">
+					<span class="span-btn"><img src="./images/gouwuc02.png"></span>
+					<span class="input-span">1</span>
+					<span class="span-btn"><img src="./images/gouwuc03.png"></span>
+				</div>
+			</div>
+			<a href="#" class="spec-comfirn-btn">确认</a>
+		</div>
+	</div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script src="./js/swiper/js/swiper.min.js"></script>
+<script type="text/javascript">
+	var swiper = new Swiper('.goods-details-swiper', {
+		autoplay: true,
+		pagination: {
+			el: '.swiper-pagination',
+		},
+	});
+  $('.btn .first').click(function(){
+    $('.mask-contact').show();
+    $('body').css({overflow: 'hidden', height: '100vh'});
+  })
+
+  $('.choice-guige').click(function() {
+  	$('.mask-spec').show();
+    $('body').css({overflow: 'hidden', height: '100vh'});
+  })
+
+  $('.mask-dialog-bg, .mask-contact .concact-cancel, .mask-spec .close-img').click(function() {
+    $('.mask-dialog').hide();
+    $('body').css({overflow: 'inherit', height: 'auto'});
+  })
+</script>
+</html>
