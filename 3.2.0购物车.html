@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>选择身份</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+	<div class="main shopping-cart">
+		<div class="shopping-con">
+	    <div class="item">
+	      <img src="./images/woyaozy05.png" class="check-box" alt="">
+	      <img src="./images/shouye06.png" class="goods-img" alt="">
+	      <div class="cons">
+	        <p class="goods-info">
+	          <span class="goods-name">Naef Cublex立方体创立方体创立方体创立方体创...</span>
+	          <img src="./images/gouwuc01.png" alt="">
+	        </p>
+	        <div class="goods-price">
+	          <p class="price">¥199.00</p>
+	          <div class="operate">
+	            <span><img src="./images/gouwuc02.png"></span>
+	            <span class="pay_num">0</span>
+	            <span><img src="./images/gouwuc03.png"></span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <img src="./images/woyaozy05.png" class="check-box" alt="">
+	      <img src="./images/shouye06.png" class="goods-img" alt="">
+	      <div class="cons">
+	        <p class="goods-info">
+	          <span class="goods-name">Naef Cublex立方体创立方体创立方体创立方体创...</span>
+	          <img src="./images/gouwuc01.png" alt="">
+	        </p>
+	        <div class="goods-price">
+	          <p class="price">¥199.00</p>
+	          <div class="operate">
+	            <span><img src="./images/gouwuc02.png"></span>
+	            <span class="pay_num">0</span>
+	            <span><img src="./images/gouwuc03.png"></span>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+    </div>
+    <div class="section section-four">
+      <p class="four-title">猜你喜欢</p>
+      <p class="four-tip">猜你所想 荐你所爱</p>
+      <div class="shopping-cart-con clearfix">
+        <a href="#" class="cart-item">
+          <img src="./images/shouye06.png" class="cart-goods-img">
+          <div class="text-div">
+	          <p class="goods-title">真度·全脑训练教具卡</p>
+	          <p class="goods-tip">温暖纯良 真情呵护</p>
+	          <p class="goods-price">￥179.00 <s class="goods-cost-price">¥266.00</s></p>
+          </div>
+        </a>
+        <a href="#" class="cart-item">
+          <img src="./images/shouye06.png" class="cart-goods-img">
+          <div class="text-div">
+	          <p class="goods-title">真度·全脑训练教具卡</p>
+	          <p class="goods-tip">温暖纯良 真情呵护</p>
+	          <p class="goods-price">￥179.00 <s class="goods-cost-price">¥266.00</s></p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="fixed">
+      <div class="left">
+        <img src="./images/woyaozy05.png" class="check-box" alt="">
+        <span class="all-check">全选</span>
+        <div class="price-div">
+        	<p class="price-text"><span>总价: <em>¥199.00</em></span></p>
+        	<p class="price-tip">共2件商品</p>
+        </div>
+       
+      </div>
+      <div class="right">立即支付</div>
+    </div>
+	</div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script type="text/javascript">
+</script>
+</html>

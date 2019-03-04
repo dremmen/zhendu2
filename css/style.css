@@ -1454,3 +1454,441 @@
 	text-align: center;
 	top: 27.4rem;
 }
+
+/* 购物车 */
+.shopping-cart {
+	padding-bottom: 5rem;
+	box-sizing: border-box;
+}
+.shopping-cart .item {
+	padding: 1.5rem;
+	display: flex;
+}
+.shopping-cart .item .check-box {
+	width: 1.8rem;
+	height: 1.8rem;
+	max-width: 1.8rem;
+	margin-right: 1rem;
+	margin-top: 3.1rem;
+}
+.shopping-cart .item .goods-img {
+	min-width: 8rem;
+	height: 8rem;
+	max-width: 8rem;
+	margin-right: 1rem;
+	object-fit: cover;
+}
+.shopping-cart .item .cons {
+	flex: 1;
+	position: relative;
+	width: calc(100% - 12rem);
+}
+.shopping-cart .item .cons .goods-info .goods-name {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: 1.5rem;
+	color: #333;
+	display: block;
+	width: calc(100% - 4rem);
+}
+.shopping-cart .item .cons .goods-info img {
+	position: absolute;
+	width: 1.4rem;
+	right: 1.5rem;
+	top: 0.4rem;
+}
+.shopping-cart .item .cons .goods-price .price {
+	position: absolute;
+	bottom: 0;
+	color: #212121;
+	font-size: 1.3rem;
+	font-weight: bold;
+	line-height: 2.5rem;
+}
+.shopping-cart .item .cons .goods-price .operate {
+	display: flex;
+	flex: 1;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border: .1rem solid #ccc;
+	border-radius: 100px;
+	box-sizing: border-box;
+	height: 2.5rem;
+}
+.shopping-cart .item .cons .goods-price .operate span {
+	display: block;
+	flex: 1;
+	max-width: 2.5rem;
+	max-height: 2.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 2.3rem;
+}
+.shopping-cart .item .cons .goods-price .operate span img {
+	width: 1.1rem;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	top: -0.2rem;
+}
+.shopping-cart .item .cons .goods-price .operate .pay_num {
+	border: none;
+	text-align: center;
+	line-height: 2.3rem;
+	max-width: 3.1rem;
+	width: 3.1rem;
+	box-sizing: border-box;
+	font-size: 1.3rem;
+	color: #666;
+	font-weight: 500;
+}
+.shopping-cart .fixed {
+	position: fixed;
+	bottom: 0;
+	height: 5rem;
+	line-height: 5rem;
+	display: flex;
+	width: 100%;
+	box-shadow: 1px 3px 7px rgba(0,0,0,0.2);
+	background-color: #fff;
+	z-index: 9;
+}
+.shopping-cart .fixed .price-div{
+	position: absolute;
+	right: 1rem;
+	top: 0;
+	line-height: 1.5rem;
+	text-align: right;
+}
+.shopping-cart .fixed .price-div .price-text{
+	font-size: 1.5rem;
+	color: #333333;
+	font-weight: 500;
+	margin-bottom: .6rem;
+	margin-top: .7rem;
+}
+.shopping-cart .fixed .price-div .price-tip{
+	font-size: 1rem;
+	color: #999999;
+	font-weight: 400;
+}
+.shopping-cart .fixed .left {
+	flex: 2;
+	font-size: 1.6rem;
+	color: #333;
+	position: relative;
+}
+.shopping-cart .fixed .left .all-check {
+	margin-right: 1.5rem;
+	margin-left: 3.8rem;
+}
+.shopping-cart .fixed .left img {
+	position: absolute;
+	left: 0;
+	width: 1.8rem;
+	left: 1.5rem;
+	top: 1.6rem;
+}
+.shopping-cart .fixed .left em {
+	font-size: 1.5rem;
+}
+.shopping-cart .fixed .right {
+	width: 15.5rem;
+	background-color: #C54536;
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 500;
+	text-align: center;
+}
+.shopping-con{
+	border-bottom: 1rem solid #F5F5FA;
+}
+.shopping-cart-con .cart-item{
+	float: left;
+	width: calc(50% - .5rem);
+	margin-right: 1rem;
+	box-shadow:0px 2px 3px 0px rgba(230,230,230,0.7);
+	border-radius:0px 0px 3px 3px;
+}
+.shopping-cart-con .cart-item:nth-child(2n){
+	margin-right: 0;
+}
+.shopping-cart-con .cart-item .cart-goods-img{
+	width: 16.75rem;
+	height: 16.75rem;
+	object-fit: cover;
+}
+.shopping-cart-con .cart-item .goods-title{
+	font-size: 1.3rem;
+	color: #060404;
+	font-weight: 400;
+	margin-bottom: .5rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.shopping-cart-con .cart-item .goods-tip{
+	font-size: 1rem;
+	color: #999;
+	font-weight: 400;
+	margin-bottom: 1rem;
+}
+.shopping-cart-con .cart-item .goods-price{
+	font-size: 1.2rem;
+	color: #333;
+	font-weight: bold;
+	position: relative;
+}
+.shopping-cart-con .cart-item .goods-price s{
+	font-size: 1rem;
+	color: #ccc;
+	font-weight: 400;
+	margin-left: .5rem;
+}
+.shopping-cart-con .cart-item .text-div{
+	padding: 1.5rem .8rem;
+	box-sizing: border-box;
+}
+
+/* 填写信息 */
+.information{
+	width: 100%;
+	min-height: 100vh;
+	background-color: #F3F4F8;
+	padding: 2rem 1rem;
+	box-sizing: border-box;
+	padding-bottom: 9rem;
+}
+.information .info-head-img{
+	width: 3.4rem;
+	height: 3.4rem;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 1rem;
+}
+.information .info-con{
+	width: calc(100% - 11rem);
+	float: left;
+	background-color: #fff;
+	border-radius: .9rem;
+	padding: 1.5rem 0;
+}
+.information .info-con .info-title{
+	font-size: 1.2rem;
+    color: #929AB8;
+    font-weight: bold;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    position: relative;
+    top: -.4rem;
+    margin-bottom: .2rem;
+    padding: 0 1.5rem;
+}
+.information .info-con .info-text{
+	font-size: 1.6rem;
+	color: #000;
+	line-height: 2.3rem;
+	font-weight: bold;
+    padding: 0 1.5rem;
+}
+.information .first-tip{
+	font-size: 1.2rem;
+	color: #A5A5A5;
+	line-height: 1.7rem;
+	margin-left: 4.5rem;
+	margin-top: 1.5rem;
+	margin-bottom: 2rem;
+	width: 25rem;
+}
+.information .matop{
+	margin-top: 2rem;
+}
+.information .info-div{
+	border-top: .1rem solid #e6e6e6;
+    padding: 0 1.5rem;
+    margin-top: 1rem;
+}
+.information .info-div input{
+	line-height: 5rem;
+	height: 5rem;
+	outline: none;
+	border: none;
+	font-size: 1.5rem;
+	color: #000;
+	font-weight: bold;
+	display: block;
+}
+.information .info-div input::-webkit-input-placeholder{
+	font-size: 1.5rem;
+	color: #999;
+	font-weight: 400;
+}
+.information .info-div .info-btn{
+	margin-top: 2rem;
+	display: block;
+	width: 10.7rem;
+	height: 3.5rem;
+	line-height: 3.5rem;
+	background-color: #CECECE;
+	color: #fff;
+	font-size: 1.5rem;
+	text-align: center;
+	border-radius: 100px;
+}
+.information .info-div .info-btn.active{
+	background-color: #C54536;
+}
+.info-right .info-fr-con{
+	float: right;
+	background-color: #C54536;
+	color: #fff;
+	border-radius: .9rem;
+	width: 11.5rem;
+}
+.info-right .info-fr-con .info-fr-title{
+	line-height: 5rem;
+	padding-left: 2rem;
+	border-bottom: .05rem solid rgba(255, 255, 255, .3);
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+.info-right .info-fr-con .info-fr-text{
+	line-height: 4.8rem;
+	color:rgba(246, 223, 220, .7);
+	font-weight: 400;
+	font-size: 1.3rem;
+	position: relative;
+	padding-left: 2rem;
+}
+.info-right .info-fr-con .info-fr-text img{
+	width: 1.3rem;
+	height: 1.2rem;
+	position: absolute;
+	right: 2.3rem;
+	top: 1.8rem;
+}
+.information .test-btn{
+	background-color: #C54536;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	height: 5rem;
+	line-height: 5rem;
+	color: #fff;
+	text-align: center;
+	font-size: 1.7rem;
+	display: none;
+	z-index: 99;
+}
+
+/* 重新测试支付 */
+.pay-again .pay-top{
+	height: 6rem;
+	line-height: 3.8rem;
+	background-color: #F5F5FA;
+	box-sizing: border-box;
+	padding: 1.1rem 1.5rem;
+	font-size: 1.2rem;
+	color: #333;
+}
+.pay-again .pay-top .pay-top-title{
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #333;
+	line-height: 1.5rem;
+}
+.pay-again .pay-top .pay-top-tip{
+	font-size: 1.2rem;
+	color: #999;
+	font-weight: 400;
+	line-height: 1.5rem;
+	margin-top: .8rem;
+}
+.pay-info{
+	padding: 0 1.5rem;
+}
+.pay-info .pay-info-title{
+	line-height: 5.2rem;
+	font-weight: bold;
+	font-size: 1.6rem;
+	color: #333;
+}
+.pay-info .info-div p{
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
+}
+.pay-info .info-div p .fl{
+	color: #666666;
+	font-weight: 400;
+}
+.pay-info .info-div p .fr{
+	color: #333333;
+	font-weight: 400;
+}
+.pay-info .tip{
+	font-size: 1.2rem;
+	color: #999;
+	font-weight: 400;
+	line-height: 5rem;
+	height: 5rem;
+	border-top: .1rem solid #E6E6E6;
+	margin-top: 2.5rem;
+}
+.pay-info .tip .pay-protocol{
+	font-size: 1.2rem;
+	color: #212121;
+}
+.pay-info .pay-btn{
+	height: 5rem;
+	line-height: 5rem;
+	color: #fff;
+	font-weight: bold;
+	background-color: #C54536;
+	border-radius: .3rem;
+	display: block;
+	text-align: center;
+	font-size: 1.7rem;
+}
+
+/* 测试界面 */
+.topic .info-con{
+	width: 26.5rem;
+}
+.topic .info-topic{
+	font-size: 1.5rem;
+	color: #000;
+	padding: 1.5rem 0;
+	padding-left: 4rem;
+	border-bottom: .1rem solid #F0F0F7;
+	position: relative;
+}
+.topic .info-topic:after{
+	position: absolute;
+	background-image: url(../images/ceshijm01.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 2.5rem;
+	height: 2.5rem;
+	content: "";
+	left: 0;
+	top: 2.4rem;
+}
+.topic .info-topic.active:after{
+	background-image: url(../images/ceshijm02.png);
+}
+.topic .info-topic:last-child{
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.topic .info-fr-con{
+	width: 26.5rem;
+}
+.topic .info-fr-con .info-fr-title{
+	line-height: 2.2rem;
+	padding: 1.5rem;
+}

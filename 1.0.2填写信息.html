@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>填写信息</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./js/MultiPicker/MultiPicker.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+	<div class="main information">
+		<div class="information-con">
+			<div class="info-left clearfix">
+				<img src="./images/tianxiexx.png" class="fl info-head-img">
+				<div class="info-con">
+					<p class="info-title">天赋人工智能</p>
+					<p class="info-text">Hi~你好，现在请填写你的基本资料，请如实填写</p>
+				</div>
+			</div>
+			<p class="first-tip">请以下信息作为测试所需，平台将不会泄漏您的任何信息，请放心填写</p>
+			<div class="info-left matop clearfix">
+				<img src="./images/tianxiexx.png" class="fl info-head-img">
+				<div class="info-con">
+					<p class="info-title">天赋人工智能</p>
+					<p class="info-text">Hi~你的姓名</p>
+					<div class="info-div">
+						<input type="text" name="name" placeholder="请输入你的姓名" class="input-left">
+						<span class="info-btn">确定</span>
+					</div>
+				</div>
+			</div>
+		</div>
+    	<div id="targetContainer"></div>
+    	<a href="#" class="test-btn">免费检测</a>
+	</div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script src="./js/MultiPicker/MultiPicker.js"></script>
+<script type="text/javascript">
+	// 是否是孩子
+	var is_child = true;
+	$('.information-con').on('change', '.input-left', function() {
+		$(this).parent('.info-div').find('.info-btn').addClass('active');
+	})
+	$('.information-con').on('click', '.info-btn.active', function() {
+		var str2 = '';
+		var _val = $(this).parent('.info-div').find('.input-left').val();
+		$(this).parent('.info-div').hide();
+		if($('.information-con .info-left').length < '3'){
+			is_child = true;
+		}
+		var str = '<div class="info-right matop clearfix">'+
+					'<img src="./images/tianxiexx.png" class="fr info-head-img">'+
+					'<div class="info-fr-con">'+
+						'<p class="info-fr-title">'+_val+'</p>'+
+						'<p class="info-fr-text">重新选择 <img src="./images/tianxiexx02.png" class="refresh"></p>'+
+					'</div>'+
+				'</div>';
+		if(is_child){
+			str2 = '<div class="info-left matop clearfix">'+
+					'<img src="./images/tianxiexx.png" class="fl info-head-img">'+
+					'<div class="info-con">'+
+						'<p class="info-title">天赋人工智能</p>'+
+						'<p class="info-text">Hi~你孩子的姓名</p>'+
+						'<div class="info-div">'+
+							'<input type="text" name="name" placeholder="请输入孩子姓名" class="input-left">'+
+							'<span class="info-btn">确定</span>'+
+						'</div>'+
+					'</div>'+
+				'</div>';
+			is_child = false;
+		}else{
+			str2 = '<div class="info-left matop select clearfix">'+
+					'<img src="./images/tianxiexx.png" class="fl info-head-img">'+
+					'<div class="info-con">'+
+						'<p class="info-title">天赋人工智能</p>'+
+						'<p class="info-text">孩子所在年级是？</p>'+
+						'<div class="info-div">'+
+							'<input type="text" name="name" placeholder="点击选择年级" id="multiPickerInput" readonly class="input-left">'+
+						'</div>'+
+					'</div>'+
+				'</div>';
+		}
+		$('.information-con').append(str);
+		$('.information-con').append(str2);
+		$('.input-left').val('');
+		$(this).removeClass('active');
+	})
+	$('.information-con').on('click', '.info-fr-text', function(){
+		$(this).parents('.info-right').prev('.info-left').find('.info-div').show();
+		$(this).parents('.info-right').nextAll().remove();
+		$(this).parents('.info-right').remove();
+		$('.test-btn').hide();
+	})
+	new MultiPicker({
+		input: 'multiPickerInput',//点击触发插件的input框的id
+		container: 'targetContainer',//插件插入的容器id
+		title: '所在年级',
+		jsonData: [{
+			'value': '小学1-5',
+			'id': 0
+		},{
+			'value': '小升初',
+			'id': 0
+		},{
+			'value': '初中1-2',
+			'id': 0
+		},{
+			'value': '初升高',
+			'id': 0
+		},{
+			'value': '高中',
+			'id': 0
+		}],
+		success: function (arr) {
+			$('.select .info-div').hide();
+			var str = '<div class="info-right matop clearfix">'+
+					'<img src="./images/tianxiexx.png" class="fr info-head-img">'+
+					'<div class="info-fr-con">'+
+						'<p class="info-fr-title">'+arr[0].value+'</p>'+
+						'<p class="info-fr-text">重新选择 <img src="./images/tianxiexx02.png" class="refresh"></p>'+
+					'</div>'+
+				'</div>';
+			var str2 = '<div class="info-left matop clearfix">'+
+							'<img src="./images/tianxiexx.png" class="fl info-head-img">'+
+							'<div class="info-con">'+
+								'<p class="info-title">天赋人工智能</p>'+
+								'<p class="info-text">好的，接下来请认真检测约10个问题，您只有一次免费机会，重新测试需支付99元</p>'+
+							'</div>'+
+						'</div>'+
+						'<p class="first-tip">请根据第一感觉答题，你越真实，结果会越精准～</p>';
+			$('.information-con').append(str);
+			$('.information-con').append(str2);
+			$('.test-btn').show();
+		}//回调
+	});
+</script>
+</html>

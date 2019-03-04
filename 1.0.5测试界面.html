@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>填写信息</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./js/MultiPicker/MultiPicker.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+	<div class="main information topic">
+		<div class="information-con">
+			<div class="info-left matop clearfix">
+				<img src="./images/tianxiexx.png" class="fl info-head-img">
+				<div class="info-con">
+					<p class="info-title">1/10</p>
+					<p class="info-text">你的性别特点是？</p>
+					<div class="info-div">
+						<p class="info-topic">我思维非常敏捷灵活，善表达但比较冲动。</p>
+						<p class="info-topic">我比较沉静儿低调，不善于众人前表达。</p>
+						<p class="info-topic">我冷静而严谨，逻辑清晰表达能力强。</p>
+					</div>
+				</div>
+			</div>
+		</div>
+    	<div id="targetContainer"></div>
+    	<a href="#" class="test-btn">获得报告</a>
+	</div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script src="./js/MultiPicker/MultiPicker.js"></script>
+<script type="text/javascript">
+	// 是否是孩子
+	$('.information-con').on('click', '.info-topic', function() {
+		var self = $(this);
+		var _val = $(this).text();
+		var _index = $('.information-con .info-left').length;
+		$('.information-con .info-topic').removeClass('active')
+		$(this).addClass('active');
+		var str = '<div class="info-right matop clearfix">'+
+					'<img src="./images/tianxiexx.png" class="fr info-head-img">'+
+					'<div class="info-fr-con">'+
+						'<p class="info-fr-title">'+_val+'</p>'+
+						'<p class="info-fr-text">重新选择 <img src="./images/tianxiexx02.png" class="refresh"></p>'+
+					'</div>'+
+				'</div>';
+		var str2 = '<div class="info-left matop clearfix">'+
+					'<img src="./images/tianxiexx.png" class="fl info-head-img">'+
+					'<div class="info-con">'+
+						'<p class="info-title">'+(_index+1)+'/10</p>'+
+						'<p class="info-text">你的性别特点是？</p>'+
+						'<div class="info-div">'+
+							'<p class="info-topic">我思维非常敏捷灵活，善表达但比较冲动。</p>'+
+							'<p class="info-topic">我比较沉静儿低调，不善于众人前表达。</p>'+
+							'<p class="info-topic">我冷静而严谨，逻辑清晰表达能力强。</p>'+
+						'</div>'+
+					'</div>'+
+				'</div>';
+		setTimeout(function( ){
+			self.parent('.info-div').hide();
+			$('.information-con').append(str);
+			if(_index == '10'){
+				$('.test-btn').show();
+			}if(_index < '10'){
+				$('.information-con').append(str2);
+			}
+			$('.input-left').val('');
+			self.removeClass('active');
+		}, 100);
+	})
+	$('.information-con').on('click', '.info-fr-text', function(){
+		$(this).parents('.info-right').prev('.info-left').find('.info-div').show();
+		$(this).parents('.info-right').nextAll().remove();
+		$(this).parents('.info-right').remove();
+		$('.test-btn').hide();
+	})
+</script>
+</html>

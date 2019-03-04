@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <meta charset="UTF-8">
+  <title>重新测试支付</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script>
+    window.addEventListener("resize",function(event){      
+      getFontsize();
+    });
+    getFontsize();
+    function getFontsize() {
+      var html = document.documentElement;
+      var hWidth = html.getBoundingClientRect()["width"];
+      html.style.fontSize = (hWidth > 750) ? '20px' : hWidth / 37.5 + "px";
+    }
+  </script>
+</head>
+<body>
+	<div class="main pay-again">
+		<div class="clearfix pay-top">
+			<div class="fl">
+				<p class="pay-top-title">丁牟</p>
+				<p class="pay-top-tip">13711486887</p>
+			</div>
+			<div class="fr">您的免费机会已用完</div>
+		</div>
+		<div class="pay-info">
+			<p class="pay-info-title">购买信息</p>
+			<div class="info-div">
+				<p class="clearfix">
+					<span class="fl">购买信息</span>
+					<span class="fr">真度·天赋检测</span>
+				</p>
+				<p class="clearfix">
+					<span class="fl">次数</span>
+					<span class="fr">1次</span>
+				</p>
+				<p class="clearfix">
+					<span class="fl">单次金额</span>
+					<span class="fr">¥99.00</span>
+				</p>
+			</div>
+			<p class="tip">订单不支持退款、提交订单则表示您同意<a href="#" class="pay-protocol">《平台服务协议》</a></p>
+			<a href="./1.0.3重新测试支付完成.html" class="pay-btn">99/次 立即购买</a>
+		</div>
+	</div>
+</body>
+<script src="./js/jquery.min.1.10.2.js"></script>
+<script type="text/javascript">
+</script>
+</html>
